@@ -1,6 +1,6 @@
-language: ruby
-rvm: 
-  - 2.6.6
+#language: ruby
+#rvm: 
+#  - 2.6.6
 env: 
   - TEST_FLAG=TRUE
   - TEST_FLAG=FALSE
@@ -8,7 +8,8 @@ env:
 jobs:
   include:
   # testing basic conditionals
-  - name: Bionic Ruby 2.6.6 TRUE
+  - rvm: 2.6.6
+    name: Bionic Ruby 2.6.6 TRUE
     os: linux
     dist: bionic
     language: ruby
@@ -17,7 +18,8 @@ jobs:
     script:
       - ruby ./source/ruby_hello.rb
       - echo Test flag is ${TEST_FLAG} 
-  - name: Bionic Ruby 2.6.6 FALSE
+  - rvm: 2.6.6
+    name: Bionic Ruby 2.6.6 FALSE
     os: linux
     dist: bionic
     language: ruby
