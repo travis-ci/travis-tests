@@ -1,6 +1,6 @@
 language: ruby
-rvm: 
-  - 2.6.6
+# rvm: 
+#  - 2.6.6
 env: 
   - TEST_FLAG=TRUE
   - TEST_FLAG=FALSE
