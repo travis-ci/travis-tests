@@ -1,1 +1,25 @@
+env: 
+  - TEST_FLAG=TRUE
+  - TEST_FLAG=FALSE
 
+jobs:
+  include:
+  - name: Bionic Ruby 2.6.6 TRUE
+    os: linux
+    dist: bionic
+    language: ruby
+    rvm: 2.6.6
+    if: (env(TEST_FLAG) = TRUE)
+    script:
+      - ruby ./source/ruby_hello.rb
+      - echo Test flag is ${TEST_FLAG} 
+  - name: Bionic Ruby 2.6.6 FALSE
+    os: linux
+    dist: bionic
+    language: ruby
+    rvm: 2.6.6
+    if: (env(TEST_FLAG) = FALSE)
+    script:
+      - ruby ./source/ruby_hello.rb
+      - echo Test flag is ${TEST_FLAG} 
+    
