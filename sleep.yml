@@ -1,0 +1,8 @@
+jobs:
+  include:
+    - stage: "Sleep First"
+      name: "Sleep First stage"
+      script: ruby ./source/over_ten_minutes.rb
+    - stage: "Sleep Second"
+      name: "Sleep Second stage"
+      script: ruby ./source/over_fifty_minutes.rb

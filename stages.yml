@@ -1,0 +1,11 @@
+jobs:
+  include:
+    - stage: "First"
+      name: "First stage"
+      script: ruby ./source/ruby_hello.rb
+    - stage: "Second"
+      name: "Second stage"
+      script: ruby ./source/fail.rb
+    - stage: "Next"
+      name: "Next stage"
+      script: ruby ./source/fine.rb
