@@ -2,7 +2,7 @@ import:
 - stages.yml
 - ifs.yml
 - ifs-with-envs.yml
-#- secure.yml
+- secure.yml
 
 branches:
   only:
