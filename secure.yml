@@ -2,4 +2,4 @@ jobs:
   include:
     - stage: "Secure stage I"
       name: "Secure stage I"
-      script: echo $CORECORE
+      script: echo $MANA_MANA
