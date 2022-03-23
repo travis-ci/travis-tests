@@ -3,6 +3,7 @@ import:
 - ifs.yml
 - ifs-with-envs.yml
 - secure.yml
+- sleep.yml
 branches:
   only:
   - main
