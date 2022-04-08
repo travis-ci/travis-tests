@@ -1,3 +1,7 @@
+# testing conditionals - travis-yml and later scheduler involved
+# ==
+# testing conditional actions dependent on environmental variable definition for the build job
+# testing on specific branch + job stages thrown in
 env:
   - MY_ENV=myenv
   - ANOTHER_ENV=another_env
