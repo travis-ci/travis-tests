@@ -1,3 +1,11 @@
+# testing conditionals - travis-yml and later scheduler involved
+# ==
+# testing running build from specific branch (branch must exist ), allow failure must be 
+# used in root travis.yml (https://docs.travis-ci.com/user/conditional-builds-stages-jobs/) 
+# building branches - https://docs.travis-ci.com/user/customizing-the-build/#building-specific-branches
+# ==
+# commit messages: https://docs.travis-ci.com/user/customizing-the-build/#skipping-a-build 
+# example: do something if commit message has specific value e.g. 'docker'
 jobs:
   include:
     - stage: "IFS - first"
