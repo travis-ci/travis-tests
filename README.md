@@ -1,4 +1,5 @@
 # travis-tests
+
 Repository for running Travis test jobs on Travis.
 It is meant to be re-run and reused as part of regression checks for the whole system.
 Technically these are falling into 'integration tests' category.
@@ -15,6 +16,4 @@ When adding specific set of jobs, testing a particular feature, you must follow 
 5. Import new specific file into main `.travis.yml`
 6. Once the tests are ok, create a Pull Request to 'main', yet please do not delete the branch if branch-specific builds are defined!
 
-This is meant to keep the scopes of tested areas somehow structurized.
-
-
+This is meant to keep the scopes of tested areas structurized.
