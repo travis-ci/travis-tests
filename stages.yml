@@ -1,0 +1,16 @@
+# cases for build-stages https://docs.travis-ci.com/user/build-stages/
+# - sequence of stages
+# - named stages
+# TODO: add bash output or comment whether expected result of the job is to pass or fail at each job in matrix
+jobs:
+  include:
+    - stage: "First"
+      name: "First stage"
+      script: ruby ./source/ruby_hello.rb
+    # in 'Second' ruby exception is raised, this specific job should fail in terms of particular build job status
+    - stage: "Second"
+      name: "Second stage"
+      script: ruby ./source/fail.rb
+    - stage: "Next"
+      name: "Next stage"
+      script: ruby ./source/fine.rb

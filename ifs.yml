@@ -1,0 +1,22 @@
+# testing conditionals - travis-yml and later scheduler involved
+# ==
+# testing running build from specific branch (branch must exist ), allow failure must be 
+# used in root travis.yml (https://docs.travis-ci.com/user/conditional-builds-stages-jobs/) 
+# building branches - https://docs.travis-ci.com/user/customizing-the-build/#building-specific-branches
+# ==
+# commit messages: https://docs.travis-ci.com/user/customizing-the-build/#skipping-a-build 
+# example: do something if commit message has specific value e.g. 'docker'
+jobs:
+  include:
+    - stage: "IFS - first"
+      name: "IFS - first stage"
+      if: branch = integration-regresion-tests
+      script: ruby ./source/ruby_hello.rb
+    - stage: "IFS - on commit"
+      name: "IFS - on commit stage"
+      if: commit_message =~ /docker/
+      script: ruby ./source/ruby_hello.rb
+    - stage: "IFS with envs - next - never run"
+      name: "IFS with envs - next - never run stage"
+      if: branch = not-existant-branch
+      script: ruby ./source/ruby_hello.rb

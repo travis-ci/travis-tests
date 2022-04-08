@@ -1,0 +1,11 @@
+# testing mechanisms for autocancelling the jobs (travis-hub + worker involved)
+jobs:
+  include:
+    # a job that does not puts out enything to cli (job log) for first 10 minutes - we expect autocancel on that job to happen
+    - stage: "Sleep First"
+      name: "Sleep First stage"
+      script: ruby ./source/over_ten_minutes.rb
+    # a job that runs for more than 50 minutes (an output to cli (job log) must be done with intervals < 10 mins) - we expect autocancel at around 50 minutes mark here
+    - stage: "Sleep Second"
+      name: "Sleep Second stage"
+      script: ruby ./source/over_fifty_minutes.rb
