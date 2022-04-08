@@ -1,3 +1,7 @@
+# cases for build-stages https://docs.travis-ci.com/user/build-stages/
+# - sequence of stages
+# - named stages
+# TODO: add bash output whther expected result of the job is to pass or fail at each job in matrix
 jobs:
   include:
     - stage: "First"
