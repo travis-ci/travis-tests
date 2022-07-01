@@ -1,9 +1,5 @@
 import:
-- stages.yml
-- ifs.yml
-- ifs-with-envs.yml
-- secure.yml
-- sleep.yml
+- vault.yml
 branches:
   only:
   - main
