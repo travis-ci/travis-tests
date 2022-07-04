@@ -8,12 +8,12 @@ vault:
 os: linux
 dist: bionic
 language: ruby
-rvm:
-- 2.7.5
 jobs:
-  allow_failures:
-  - os: linux
-    dist: bionic
-    language: ruby
-    rvm: 2.7.5
+  include:
+    - os: linux
+      dist: bionic
+      language: ruby
+      rvm: 2.7.5
+      script:
+        - ruby ./source/ruby_hello.rb
 
