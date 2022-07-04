@@ -4,6 +4,7 @@ branches:
   only:
   - main
   - integration-regresion-tests
+  - vault-tests
 os: linux
 dist: bionic
 language: ruby
