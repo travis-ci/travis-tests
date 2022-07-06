@@ -5,6 +5,7 @@ branches:
   - main
   - integration-regresion-tests
   - vault-tests
+  - ga-testsec
 os: linux
 dist: bionic
 language: ruby
