@@ -1,5 +1,3 @@
-import:
-- vault.yml
 branches:
   only:
   - main
@@ -8,12 +6,12 @@ branches:
   - ga-testsec
 os: linux
 dist: bionic
-language: ruby
+language: generic
 env:
   global:
   - secure: J6PkiwYONd/W1PB5FOtJ46i6Ta7MGx05znAVGcW5E5jDDPBMuOL8Ecq/0vlbPsFGPlwHZtnn4FjWtg7X183gWtRZ0eGdY6GE/5hzL1g65aw0XyLXBSRzu5R2IQYlbNDxclXjBhVV7NvH4z63EFSKkbaxVuuUQXDbNXjgEJDMXfAQqSxlz/+0Qh/yJNvsJRnG3soT3c0fHa839k32yqjIGJqO5VJDEp8O5sRaEIbTqF4v6PwkKDY58MAfrNFMWuMxfzUAAQj2bt1S5E9baajv2rllJgS/i9gNFO5XKoVGQN3UbFI1rpR+oGc4nWn6gdHpoLA1j5aMyLVHw3dgKrv5OyysOP+kF0T8sgY0P3WThNJxwK8NKMymUcjCx9mmu+ZHxA9qZHGPBf6lbzVpF9XeOn7BXpwD10dFOlPEYgKqAuiecNVnXHFtr42LJryYZJpL/DjP8BdMaaH24jaNZDpUQw147cpcpZXvHv+LQjUpRQSxQx+iLO2SoEzdg7fHYoIAbGO9tZB1j/uS+4JYTQv7WJKam84iUkM74FF2l3JHU0zjdT5sb0qU91aUAHDUuvV4t997ngE/rMw22scKbVGQtVsDiMYEBbfqX3wnFwCSnlYfn9dJEU/pPjlS/qaxcehvGxII5TJMZtjBFYIgApo5koAn0S6G1jH1CcvMRDH5m9A=
   - secure: fuSNbtk8n4HTOjpjAWVx+Gzk1z3G/BbOPLq2ypJptQYJ9svTbJtZVjjGDRYOeHE6y5K65DAcYHT0B1hgP3pKOXEVIcwOv2R2q6Rgz9gA9jTkA5i+ypkpt3jgnGZccan6s7YpDpDBIPGaVQWOGkvUSQPifJ/CtKL2iOkG3WMRWyNGPVnLHqirngEC7lbaUmKrt/ul6cIzZlQV2klFJYFtWFXn2aZGrLwvNgSAkLs0f96UKFMmjmE2UouVt9XM3S632NejfJp54yVN6xL6sHtlk1zmYUcb1NHjXH+b1OtLuZchRqJDvtBdjeiMk1CaIejB3rAu6c7Ru794fu/E69nPTAMLYySgX0cfkjJrtU0XcOJUKfloI57MI/D3gNYWtY6oz1zHbYcwomV8iMXW1NGrTTdnoDxcRqIwheuEnv/Fxd0dQVDnzlNL+UAVvAfDj5jJCSTFJsjNgQL3IsK30jYZVn5Gm5oghu6XVtOwMTZ0JCJosZSvHgQs6QtK3Uu4BMRiPsmlFFqAT3I7tG3xhIxJX/s4vNfXAKRDdVwS1HLFgrII/z0V9sbvaLLBdqZJ8DFiRWuHvfi+zdnudmawKmP/yt6o0gH8kA+KoPql36ZQ9g/CWyQzD4avWvzrqXmIOltElaW5JTPXBozCZQu3RHITsp6xBTRfB9d4mDb2XpiPuHQ=
 
-    script: 
-      - echo $MYSECVAR1
-      - echo $MYSECVAR1 | hd
+script: 
+  - echo $MYSECVAR1
+  - echo $MYSECVAR1 | hd
