@@ -1,3 +1,5 @@
+import:
+- vault.yml
 branches:
   only:
   - main
@@ -5,13 +7,15 @@ branches:
   - vault-tests
 os: linux
 dist: bionic
-language: generic
-addons:
-  sonarcloud:
-    organization: maciej
-    token:
-      secure: "paNOufBT7kUFdnGlwEVWLgcGy4Psp2IxSPFTT43KC6sP53StZ2+S7Ez0e/YUlk9cx8rxATluCEcBJCpZ0koVa7sDo4fNJfGT4xu8rZnYjRY8SMf637IJ+2+ZjOeMCg6uWmJZafP049oa+CK/LqmY9zfge/wEFTdqw8U57O90mDZNIhN4OJBeUxYGs0npV+T3q4W3F2UlM0WLdbXaie/CMqzKrjADNVA0cjQDsyn206f1+XRqz8u4lWsnMhl99jlQlXb7CT4QNVvHkySM7Qe4coAan2wlQYSN2B2rqtf6Az39JfWO8pfkW7pwl9FB572wJG7cFwpGFJaj5D/vaorzPmBrGIM3prXW1KsjWxSsETG37XJ1+tkv40UY4YwBWNUtz9ZowMwMzQjOudO13bx3szZEFcXQzFh3E4mGBqxYmgHfPIOnKQt7mcRPD0hlh05wDKP6vKdC9NDsMDmfz5IDKXRp81fjI12RcgjPhzjpxLNNkxsQFk8CeZzkyS83cdDyStfTxmADS5xDXw3l97KxiZaiBt7Py/4vDvGeqyi0qK0zw6wa31dy2BWAKb42QT1ZaEVTT2rF5F1MDzaw9S6csPzmH5VnlHvOfGvBVmNkhXHXvSa2m/y78N7x1Kvwfyxd1TKnkHB4nYp4D6BB9jBF8QQ1AOsoEte0Gks8cJh6vNU="
-script:
-  - $SAUCE_ACCESS_KEY | grep bash
-  - echo $SAUCE_ACCESS_KEY | grep bash
-
+language: ruby
+jobs:
+  include:
+  - os: linux
+    dist: bionic
+    language: ruby
+    rvm: 2.7.5
+    script:
+      - ruby ./source/ruby_hello.rb
+env:
+  global:
+  - secure: J6PkiwYONd/W1PB5FOtJ46i6Ta7MGx05znAVGcW5E5jDDPBMuOL8Ecq/0vlbPsFGPlwHZtnn4FjWtg7X183gWtRZ0eGdY6GE/5hzL1g65aw0XyLXBSRzu5R2IQYlbNDxclXjBhVV7NvH4z63EFSKkbaxVuuUQXDbNXjgEJDMXfAQqSxlz/+0Qh/yJNvsJRnG3soT3c0fHa839k32yqjIGJqO5VJDEp8O5sRaEIbTqF4v6PwkKDY58MAfrNFMWuMxfzUAAQj2bt1S5E9baajv2rllJgS/i9gNFO5XKoVGQN3UbFI1rpR+oGc4nWn6gdHpoLA1j5aMyLVHw3dgKrv5OyysOP+kF0T8sgY0P3WThNJxwK8NKMymUcjCx9mmu+ZHxA9qZHGPBf6lbzVpF9XeOn7BXpwD10dFOlPEYgKqAuiecNVnXHFtr42LJryYZJpL/DjP8BdMaaH24jaNZDpUQw147cpcpZXvHv+LQjUpRQSxQx+iLO2SoEzdg7fHYoIAbGO9tZB1j/uS+4JYTQv7WJKam84iUkM74FF2l3JHU0zjdT5sb0qU91aUAHDUuvV4t997ngE/rMw22scKbVGQtVsDiMYEBbfqX3wnFwCSnlYfn9dJEU/pPjlS/qaxcehvGxII5TJMZtjBFYIgApo5koAn0S6G1jH1CcvMRDH5m9A=
