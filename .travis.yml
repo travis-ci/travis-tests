@@ -15,5 +15,4 @@ addons:
 
 
 script:
-  - $SAUCE_ACCESS_KEY | grep bash
-  - echo $SAUCE_ACCESS_KEY | grep bash
+  - echo $SAUCE_ACCESS_KEY | hd
