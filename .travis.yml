@@ -1,5 +1,3 @@
-import:
-- vault.yml
 branches:
   only:
   - main
@@ -9,10 +7,10 @@ os: linux
 dist: bionic
 language: generic
 addons:
-  sauce_connect:
-    username: 'maciej'
-  jwt:
-    secure: "gFv88uMMZEgsvnsXaCPr6btm+T8O69R+u/jfWwnu419P92RQ0+ryGaLPOSAFdkD9EEU6PlEqALf72RikBruSwPXy0D4djThcF+0ubvCLzCmG6eyf1XjKqlQthW2DpDSl1ZtNrG4Xk5hC12zVvBakKkHobxNrs5T6Njj5fch2k4Qtck1NHrCNXHU1c+ptdgI6bZ1C1m/iPn6EGg19I+1HvTKgHEaPCJ5pIjlIKowYRuwAHskcSIfrVmN7v9DhZLK4wJSgpWqxBD4vJ7CVI1aDj1E3VK1HfFb3U8OVH6CgcLmHRFwSDa/rFa7HgTZhrtP4VBO+wGTGfGdfbwHl2NAH5P4V/kNFmaN7bcMnmvE3NSi1OQyEpjFZ/CvpbwGwIAuVe+3JjZhqic5oNxNfqO7POt6YtpKUJDKcYWDgicZgCB5QLa6iyG73dVcmuotxJeKrrkWxQiU2ljT2hz3a3s6XttLrsP27RhwmWmyxBDmSVbEAxlXrhnE5aUXAxxZ3+6lZPqndsUdrd3WqtmXG7jkFdScpxCB0U1X7U8MdcA2RVCqhNaPPL8enPvxd8PwJTnUS+fkPsSyWd4aidKKx6ejmVMFxiNvY6NmZkNS9MWWEUNNunt4OYcOTyN5PORnG/yS993Ae0klN//jLiSS2tVSQPLCb4g4ZDEsMAuUhWLuTpeI="
+  sonarcloud:
+    organization: maciej
+    token:
+      secure: "gFv88uMMZEgsvnsXaCPr6btm+T8O69R+u/jfWwnu419P92RQ0+ryGaLPOSAFdkD9EEU6PlEqALf72RikBruSwPXy0D4djThcF+0ubvCLzCmG6eyf1XjKqlQthW2DpDSl1ZtNrG4Xk5hC12zVvBakKkHobxNrs5T6Njj5fch2k4Qtck1NHrCNXHU1c+ptdgI6bZ1C1m/iPn6EGg19I+1HvTKgHEaPCJ5pIjlIKowYRuwAHskcSIfrVmN7v9DhZLK4wJSgpWqxBD4vJ7CVI1aDj1E3VK1HfFb3U8OVH6CgcLmHRFwSDa/rFa7HgTZhrtP4VBO+wGTGfGdfbwHl2NAH5P4V/kNFmaN7bcMnmvE3NSi1OQyEpjFZ/CvpbwGwIAuVe+3JjZhqic5oNxNfqO7POt6YtpKUJDKcYWDgicZgCB5QLa6iyG73dVcmuotxJeKrrkWxQiU2ljT2hz3a3s6XttLrsP27RhwmWmyxBDmSVbEAxlXrhnE5aUXAxxZ3+6lZPqndsUdrd3WqtmXG7jkFdScpxCB0U1X7U8MdcA2RVCqhNaPPL8enPvxd8PwJTnUS+fkPsSyWd4aidKKx6ejmVMFxiNvY6NmZkNS9MWWEUNNunt4OYcOTyN5PORnG/yS993Ae0klN//jLiSS2tVSQPLCb4g4ZDEsMAuUhWLuTpeI="
 script:
   - $SAUCE_ACCESS_KEY | grep bash
   - echo $SAUCE_ACCESS_KEY | grep bash
