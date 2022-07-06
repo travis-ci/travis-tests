@@ -16,4 +16,14 @@ jobs:
       rvm: 2.7.5
       script:
         - ruby ./source/ruby_hello.rb
+      vault:
+        api_url: https://vault-dwztla.travis-ci.com
+        token:
+          secure: "Ms2EkOhi69IMKVmqO26CcM8otLp48LHZi6eK+Xs1ZklntiMV8tu80KxEAEPEz3Z5nq5Z2LVco7m1lhw4xPAFbgkzfTFR6LFj1wkj56zXU63INF1hYtp5opGUP1gilzzCZofogyY8fnysw/K3XzR+7fNdAsUswlWRRry1yjTnbI+oYIaXozoumZq3CS0Z2LG4cVZMTSUxK4d+8HJCvtKEx6K/UpzI9togCqdY9aPTlbUlv7C77kUAjEaUMCubHqrttTi/79u6hT+xB9y8tH8bQDv3t5IHQ5RRbLoogDVxz6aAv5/YGiDAjABMh6JKrsHLiYLNrkfRP5EoCaG8Yi6z202wjlF1NMBK1ZfjMAmQLad/8qqd5p9geEklKMGI2PX2Vq9/nqcVGAfS956HQ9XpUKbTTcH11boFp4lDV8Az43EDYPRz2o4yXaunu/0k/JaFqdoBNbc4FadKytvF1pZh8R+bUsObvhkzQW+h8xMC7Fe8xaTv2iHuhEWn3Iz5tdvwh+irbmaYeNOToMzmGf2lJtJmmkfyN9ks/epsuMCqIWrlkZKPF3YJfvIqPZNqXTG5XwIqEHKcI+Jmm6tcUxcDvgAuZ2FvI+wlJwaXoZ3PBFqhoiDEop4GpgIJODy2s0Z83KeYe51kL6DLxh6GXJNZSEn/pTfwMH4k4p1VIWJvWv8="
+    - os: linux
+      dist: bionic
+      language: ruby
+      rvm: 2.7.5
+      script:
+        - ruby ./source/list_envs.rb
 
