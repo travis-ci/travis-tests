@@ -16,6 +16,8 @@ vault:
     - ns2/project_id/secret_key_g
     - ns2/project_id/secret_key2_h
 env:
+  global:
+    - GLOBAL_NOT_IMPORTANT=global
   - MY_NOT_IMPORTANT_VARIABLE=meh
 dist: bionic
 language: ruby
