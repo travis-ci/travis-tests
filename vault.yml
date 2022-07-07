@@ -1,11 +1,21 @@
 vault:
   api_url: https://vault-dwztla.travis-ci.com
   token:
-    secure: "paNOufBT7kUFdnGlwEVWLgcGy4Psp2IxSPFTT43KC6sP53StZ2+S7Ez0e/YUlk9cx8rxATluCEcBJCpZ0koVa7sDo4fNJfGT4xu8rZnYjRY8SMf637IJ+2+ZjOeMCg6uWmJZafP049oa+CK/LqmY9zfge/wEFTdqw8U57O90mDZNIhN4OJBeUxYGs0npV+T3q4W3F2UlM0WLdbXaie/CMqzKrjADNVA0cjQDsyn206f1+XRqz8u4lWsnMhl99jlQlXb7CT4QNVvHkySM7Qe4coAan2wlQYSN2B2rqtf6Az39JfWO8pfkW7pwl9FB572wJG7cFwpGFJaj5D/vaorzPmBrGIM3prXW1KsjWxSsETG37XJ1+tkv40UY4YwBWNUtz9ZowMwMzQjOudO13bx3szZEFcXQzFh3E4mGBqxYmgHfPIOnKQt7mcRPD0hlh05wDKP6vKdC9NDsMDmfz5IDKXRp81fjI12RcgjPhzjpxLNNkxsQFk8CeZzkyS83cdDyStfTxmADS5xDXw3l97KxiZaiBt7Py/4vDvGeqyi0qK0zw6wa31dy2BWAKb42QT1ZaEVTT2rF5F1MDzaw9S6csPzmH5VnlHvOfGvBVmNkhXHXvSa2m/y78N7x1Kvwfyxd1TKnkHB4nYp4D6BB9jBF8QQ1AOsoEte0Gks8cJh6vNU="
+    secure: "ZOkd5QXvkfhrI2mNxLWTw1by8t9EbdHrWHIsB8je1SvDWmrkop5I1orppFPgy6ik/zARI/ycKGhLe+cgcc3BlDQzgzOy7p6u3C+dNUrY+7jZiTDoQjm6QcI5nc1D7OqlsXpTlWcXRvkUQJOKRWGHO7Gx+I+XQ++Wj9WJcCWsyrY76rRSiXZk7AKPHzgFTIyXO6bjIhp0Ah0+UpoNGSyzlVavJ7vk3mwnROynfqsWzQGiMUKiYzJJeSyomuHncj2hS1jd67BQR3FuLhn1kBfGnslQPreDcoHKvF4xRxHT1vQpH2fwMmsxTKVYOKmxWyXexrR6Q9C2MMdPp94VHgBLRxywVsmG/n2nLcstggMRLzWt0MT71X0vE1wcxaKshEp7/QWxIW+7bFi0PeKZBSJaTm4j9V/W/Yksb401AdNqAZSAmf1Zh3ELZ6D1Du3qGAHX01ZvrSmBCrz2ZoeUlrSGnHbfDt9NWqUvRLhaUBHc3MWQkXM8WlM4LhGRKAXRPZbR97y6DTtYYEPn0asMjecYuUVfEjGH863Ys3cWNUNtVhSvPjKCRACCiZ1AZTDxvC29NqGx+1+f5OEF3WPCFscJnLbwSwqy+GKFz9HzqU50Pzki5ZjUmufNEk0Q+nT4EIYErksIIBOGbDg2RXvQIWTUzO4yvEku2YaIJWqBAMZ5aYE="
   secrets:
-    - ns1/some_id/datum
-    - ns2/some_id2/aaa
-os: linux
+    - :namespace:
+      - :name: ns1
+      - project_id/secret_key_a
+      - project_id/not_existent
+    - :namespace:
+      - :name: ns2
+      - project_id2/secret_key_c
+      - project_id2/secret_key2_d
+    - ns1/project_id/secret_key_e
+    - ns1/project_id/it_does_not_exist
+    - ns2/project_id/secret_key_g
+    - ns2/project_id/secret_key2_h
+
 dist: bionic
 language: ruby
 jobs:
@@ -19,7 +29,7 @@ jobs:
       vault:
         api_url: https://vault-dwztla.travis-ci.com
         token:
-          secure: "paNOufBT7kUFdnGlwEVWLgcGy4Psp2IxSPFTT43KC6sP53StZ2+S7Ez0e/YUlk9cx8rxATluCEcBJCpZ0koVa7sDo4fNJfGT4xu8rZnYjRY8SMf637IJ+2+ZjOeMCg6uWmJZafP049oa+CK/LqmY9zfge/wEFTdqw8U57O90mDZNIhN4OJBeUxYGs0npV+T3q4W3F2UlM0WLdbXaie/CMqzKrjADNVA0cjQDsyn206f1+XRqz8u4lWsnMhl99jlQlXb7CT4QNVvHkySM7Qe4coAan2wlQYSN2B2rqtf6Az39JfWO8pfkW7pwl9FB572wJG7cFwpGFJaj5D/vaorzPmBrGIM3prXW1KsjWxSsETG37XJ1+tkv40UY4YwBWNUtz9ZowMwMzQjOudO13bx3szZEFcXQzFh3E4mGBqxYmgHfPIOnKQt7mcRPD0hlh05wDKP6vKdC9NDsMDmfz5IDKXRp81fjI12RcgjPhzjpxLNNkxsQFk8CeZzkyS83cdDyStfTxmADS5xDXw3l97KxiZaiBt7Py/4vDvGeqyi0qK0zw6wa31dy2BWAKb42QT1ZaEVTT2rF5F1MDzaw9S6csPzmH5VnlHvOfGvBVmNkhXHXvSa2m/y78N7x1Kvwfyxd1TKnkHB4nYp4D6BB9jBF8QQ1AOsoEte0Gks8cJh6vNU="
+          secure: "ZOkd5QXvkfhrI2mNxLWTw1by8t9EbdHrWHIsB8je1SvDWmrkop5I1orppFPgy6ik/zARI/ycKGhLe+cgcc3BlDQzgzOy7p6u3C+dNUrY+7jZiTDoQjm6QcI5nc1D7OqlsXpTlWcXRvkUQJOKRWGHO7Gx+I+XQ++Wj9WJcCWsyrY76rRSiXZk7AKPHzgFTIyXO6bjIhp0Ah0+UpoNGSyzlVavJ7vk3mwnROynfqsWzQGiMUKiYzJJeSyomuHncj2hS1jd67BQR3FuLhn1kBfGnslQPreDcoHKvF4xRxHT1vQpH2fwMmsxTKVYOKmxWyXexrR6Q9C2MMdPp94VHgBLRxywVsmG/n2nLcstggMRLzWt0MT71X0vE1wcxaKshEp7/QWxIW+7bFi0PeKZBSJaTm4j9V/W/Yksb401AdNqAZSAmf1Zh3ELZ6D1Du3qGAHX01ZvrSmBCrz2ZoeUlrSGnHbfDt9NWqUvRLhaUBHc3MWQkXM8WlM4LhGRKAXRPZbR97y6DTtYYEPn0asMjecYuUVfEjGH863Ys3cWNUNtVhSvPjKCRACCiZ1AZTDxvC29NqGx+1+f5OEF3WPCFscJnLbwSwqy+GKFz9HzqU50Pzki5ZjUmufNEk0Q+nT4EIYErksIIBOGbDg2RXvQIWTUzO4yvEku2YaIJWqBAMZ5aYE="
         secrets:
           - mana/mana/aaa
           - mana/mana/bbb
