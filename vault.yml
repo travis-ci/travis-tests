@@ -20,9 +20,9 @@ jobs:
         api_url: https://vault-dwztla.travis-ci.com
         token:
           secure: "paNOufBT7kUFdnGlwEVWLgcGy4Psp2IxSPFTT43KC6sP53StZ2+S7Ez0e/YUlk9cx8rxATluCEcBJCpZ0koVa7sDo4fNJfGT4xu8rZnYjRY8SMf637IJ+2+ZjOeMCg6uWmJZafP049oa+CK/LqmY9zfge/wEFTdqw8U57O90mDZNIhN4OJBeUxYGs0npV+T3q4W3F2UlM0WLdbXaie/CMqzKrjADNVA0cjQDsyn206f1+XRqz8u4lWsnMhl99jlQlXb7CT4QNVvHkySM7Qe4coAan2wlQYSN2B2rqtf6Az39JfWO8pfkW7pwl9FB572wJG7cFwpGFJaj5D/vaorzPmBrGIM3prXW1KsjWxSsETG37XJ1+tkv40UY4YwBWNUtz9ZowMwMzQjOudO13bx3szZEFcXQzFh3E4mGBqxYmgHfPIOnKQt7mcRPD0hlh05wDKP6vKdC9NDsMDmfz5IDKXRp81fjI12RcgjPhzjpxLNNkxsQFk8CeZzkyS83cdDyStfTxmADS5xDXw3l97KxiZaiBt7Py/4vDvGeqyi0qK0zw6wa31dy2BWAKb42QT1ZaEVTT2rF5F1MDzaw9S6csPzmH5VnlHvOfGvBVmNkhXHXvSa2m/y78N7x1Kvwfyxd1TKnkHB4nYp4D6BB9jBF8QQ1AOsoEte0Gks8cJh6vNU="
-          secrets:
-            - mana/mana/aaa
-            - mana/mana/bbb
+        secrets:
+          - mana/mana/aaa
+          - mana/mana/bbb
     - os: linux
       dist: bionic
       language: ruby
