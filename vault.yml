@@ -29,4 +29,16 @@ jobs:
       rvm: 2.7.5
       script:
         - ruby ./source/list_envs.rb
+    - os: linux
+      dist: bionic
+      language: ruby
+      rvm: 2.7.5
+      script:
+        - ruby ./source/ruby_hello.rb
+      vault:
+        api_url: https://vault-dwztla.travis-ci.com
+        token: "people put sometimes secret tokens in open text format"
+        secrets:
+          - mana/mana/aaa
+          - mana/mana/bbb
 
