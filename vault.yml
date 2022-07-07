@@ -18,7 +18,6 @@ vault:
 env:
   global:
     - GLOBAL_NOT_IMPORTANT=global
-  - MY_NOT_IMPORTANT_VARIABLE=meh
 dist: bionic
 language: ruby
 jobs:
