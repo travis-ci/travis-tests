@@ -7,7 +7,6 @@ branches:
   - vault-tests
 dist: bionic
 language: ruby
-name: "root job - two keys should be parsed successfully."
 vault:
   api_url: https://vault-dwztla.travis-ci.com
   token:

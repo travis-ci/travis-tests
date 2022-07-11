@@ -31,7 +31,7 @@ jobs:
       rvm: 2.7.5
       name: "jobs includes - Plain text token -> can't connect to the vault as token is wiped out as Travis parsing error does the job"
       script:
-        - ruby ./source/ruby_hello.rb
+        - ruby ./source/vault_check.rb
       vault:
         api_url: https://vault-dwztla.travis-ci.com
         token: "plain text token"
