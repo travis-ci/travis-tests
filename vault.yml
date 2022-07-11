@@ -7,12 +7,12 @@ vault:
   token:
     secure: "oXr3NviX2fhOyMiG0hNfIGU27+/c1O55UsONFLidvnCQImbLi3yO5Mw7Nu/zOIt2c63oatc1Z2oEgG3Xm7Oa5uX2QEXBdkCsVEQ14g+2szjUR+I4Pms0QMiUWSbsQy8uQsaZXw4+riElkk/n/kDZRmBxZhrvRhy3gJeFOelRHRRannkbP3JDDfkgizFqylSzlhJwNuQcuoS0XCa7OqsAi56E7EvKElUQ458MOm6CtjELp3QsYhkS6aB4eoSnVpJEbc2ia2nNThORFQKm0fsZXouvS3s0H0WC7C27NhdSTGQho6n/HgfePbKhF3KOFKzb6w844SJ6RHMxWMwsdZrVvByWQPUBtAvQHrUOh93chWG0YuA/TCdF7JpDXldnlAOqjBPHrxmEsMXHkJDA/2bmF4q3ky8dJBorfInI/9Fpm5EH7hyAFqoBmSkKCPZRj7OIm6WeB5euTKMmsSWpGzIXj0OlIF5XDoCE+5L2fGL155uYpT/2p7SFVTObo1oN2GL8RK1SjtldzAyn1EQrPDb0CNeYN9qOrgKxaz+rEglvOoY7NP8e84kXsQsZfpzr/1M5IW0c6t0YtTjRtlqo24VK+oyKRdXEZ38cdlu8w/kzWHFv8P/wFFJgCbfGxROpjh4J3OcUUaAaZkuqD9Y7WdyoU2Ofu3d8byUPxRkElWHD6BI="
   secrets:
-    - :namespace:
-      - :name: ns1
-        - project_id/secret_key_a
-        - project_id/not_existent
-      - ns2/project_id/secret_key_b
-      - ns2/project_id/not_existent_key
+    - namespace:
+      - name: ns1
+      - project_id/secret_key_a
+      - project_id/not_existent
+    - ns2/project_id/secret_key_b
+    - ns2/project_id/not_existent_key
 script:
   - ruby ./source/vault_check.rb
 
@@ -30,8 +30,8 @@ jobs:
         token:
           secure: "oXr3NviX2fhOyMiG0hNfIGU27+/c1O55UsONFLidvnCQImbLi3yO5Mw7Nu/zOIt2c63oatc1Z2oEgG3Xm7Oa5uX2QEXBdkCsVEQ14g+2szjUR+I4Pms0QMiUWSbsQy8uQsaZXw4+riElkk/n/kDZRmBxZhrvRhy3gJeFOelRHRRannkbP3JDDfkgizFqylSzlhJwNuQcuoS0XCa7OqsAi56E7EvKElUQ458MOm6CtjELp3QsYhkS6aB4eoSnVpJEbc2ia2nNThORFQKm0fsZXouvS3s0H0WC7C27NhdSTGQho6n/HgfePbKhF3KOFKzb6w844SJ6RHMxWMwsdZrVvByWQPUBtAvQHrUOh93chWG0YuA/TCdF7JpDXldnlAOqjBPHrxmEsMXHkJDA/2bmF4q3ky8dJBorfInI/9Fpm5EH7hyAFqoBmSkKCPZRj7OIm6WeB5euTKMmsSWpGzIXj0OlIF5XDoCE+5L2fGL155uYpT/2p7SFVTObo1oN2GL8RK1SjtldzAyn1EQrPDb0CNeYN9qOrgKxaz+rEglvOoY7NP8e84kXsQsZfpzr/1M5IW0c6t0YtTjRtlqo24VK+oyKRdXEZ38cdlu8w/kzWHFv8P/wFFJgCbfGxROpjh4J3OcUUaAaZkuqD9Y7WdyoU2Ofu3d8byUPxRkElWHD6BI="
         secrets:
-          - :namespace:
-            - :name: ns1
+          - namespace:
+            - name: ns1
             - project_id/secret_key_a
             - project_id/not_existent
           - ns2/project_id/secret_key_b
@@ -54,10 +54,10 @@ jobs:
         api_url: https://vault-dwztla.travis-ci.com
         token: "plain text token"
         secrets:
-          - :namespace:
-              - :name: ns1
-              - project_id/secret_key_a
-              - project_id/not_existent
+          - namespace:
+            - name: ns1
+            - project_id/secret_key_a
+            - project_id/not_existent
           - ns2/project_id/secret_key_b
           - ns2/project_id/not_existent_key
     - os: linux
