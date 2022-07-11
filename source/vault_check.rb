@@ -7,7 +7,7 @@ else
 end
 
 if ENV['SECRET_KEY_B']
-  puts JSON.parse(ENV['SECRET_KEY_A'])
+  puts JSON.parse(ENV['SECRET_KEY_B'])
 else
   puts 'SECRET_KEY_B is not set'
 end
