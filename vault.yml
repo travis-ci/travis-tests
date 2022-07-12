@@ -46,7 +46,7 @@ jobs:
       dist: bionic
       language: ruby
       rvm: 2.7.5
-      name: "jobs includes -  No secrets given - there is no connection to the vault at all."
+      name: "jobs includes -  No secrets defined to download - there is no connection to the vault at all." # since nothing to obtain (no secrets defined), the connection is not executed and not visible in build job logs
       script:
         - ruby ./source/vault_check.rb
       vault:
