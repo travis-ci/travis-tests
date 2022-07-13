@@ -4,10 +4,12 @@ import:
 - ifs-with-envs.yml
 - secure.yml
 - sleep.yml
+- vault.yml
 branches:
   only:
   - main
   - integration-regresion-tests
+  - prd-hashicorp-vault-dev
 os: linux
 dist: bionic
 language: ruby
