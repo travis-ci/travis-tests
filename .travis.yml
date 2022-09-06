@@ -1,24 +1,23 @@
-import:
-- stages.yml
-- ifs.yml
-- ifs-with-envs.yml
-- secure.yml
-- sleep.yml
+os: linux
+dist: focal
+
+language: ruby
+rvm: 2.7.1
+
 branches:
   only:
   - main
   - integration-regresion-tests
-os: linux
-dist: bionic
-language: ruby
-rvm:
-- 2.7.5
-jobs:
-  allow_failures:
-  - os: linux
-    dist: bionic
-    language: ruby
-    rvm: 2.7.5
+  - secure-test
+
 env:
   global:
-  - secure: J6PkiwYONd/W1PB5FOtJ46i6Ta7MGx05znAVGcW5E5jDDPBMuOL8Ecq/0vlbPsFGPlwHZtnn4FjWtg7X183gWtRZ0eGdY6GE/5hzL1g65aw0XyLXBSRzu5R2IQYlbNDxclXjBhVV7NvH4z63EFSKkbaxVuuUQXDbNXjgEJDMXfAQqSxlz/+0Qh/yJNvsJRnG3soT3c0fHa839k32yqjIGJqO5VJDEp8O5sRaEIbTqF4v6PwkKDY58MAfrNFMWuMxfzUAAQj2bt1S5E9baajv2rllJgS/i9gNFO5XKoVGQN3UbFI1rpR+oGc4nWn6gdHpoLA1j5aMyLVHw3dgKrv5OyysOP+kF0T8sgY0P3WThNJxwK8NKMymUcjCx9mmu+ZHxA9qZHGPBf6lbzVpF9XeOn7BXpwD10dFOlPEYgKqAuiecNVnXHFtr42LJryYZJpL/DjP8BdMaaH24jaNZDpUQw147cpcpZXvHv+LQjUpRQSxQx+iLO2SoEzdg7fHYoIAbGO9tZB1j/uS+4JYTQv7WJKam84iUkM74FF2l3JHU0zjdT5sb0qU91aUAHDUuvV4t997ngE/rMw22scKbVGQtVsDiMYEBbfqX3wnFwCSnlYfn9dJEU/pPjlS/qaxcehvGxII5TJMZtjBFYIgApo5koAn0S6G1jH1CcvMRDH5m9A=
+  - secure: "S/2ZdX31Q+9hsFJhdgyMVBH8m0xD+rkEjep+7O60HMBNxBJT/V7Yzag034P/NhD8qv0EcDuICRuhbJ9kB57MwlH2P7nqMqzuBLmzHQNDUAIp9ccahzb6kNtXvpSWGzCu++7mXI3p/yVAouBEZDVFfa60U8dOz2E03jG883cfcy54xC1/Vh96DJifql6otC1CCxba3W3en0yucji8FyNgadFnVPsxmemaR+g/WF0k97SnUWBai3+rk6ozuSH0eUSmooiU4vRVS3pRZh1rWUvCLoKs8DKgor0DcHMd9BAEaNM6Ktrs0GmHNTbKDA0GSfl97B+e4gqznGsY2whTw709sWUIOlq89pOOBWXN2od4wrjii6ObN9wWwvVORHOZfY1i2ARcrQ5gUzaGx/MqSLwOr99FHwlaSn5G5XCEXylm+bjkx02VOXfzmGCuX3uoMg+9vwOCU3FmyENtzSXcgYoRsFI7D/EqRrvfN20KF4oxRfCfd9Ke65P7m7xNFY0LY39t90BHCl3DoxGUbNf8XtVIn5IhpNRGlaZN2O+pfQXaLh5mWxh3hG+x7nYmHLiPsBppTyH54Uc6kFsbNIXnayfPpvbE85fl4aSG5/XhgRLLCEeMFAlr6RlwfvCCej2+FN5cw18wgnbrQpHpQIpSLG53ghFpXdHXTWvfGmGec3gYl1I="
+
+jobs:
+  include:
+    - name: '000000000'
+
+      script:
+        - echo $QWERTY
+        - echo "secure test"
