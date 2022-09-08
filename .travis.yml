@@ -20,4 +20,4 @@ jobs:
 
       script:
         - echo $QWERTY
-        - echo "secure test"
+        - echo "secure test fork"
