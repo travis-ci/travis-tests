@@ -24,7 +24,7 @@ jobs:
     language: ruby
     rvm: 2.7.1
     vault:
-      <<: *vault_data
+    <<: *vault_data
 
 env:
   global:
