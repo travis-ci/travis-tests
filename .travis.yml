@@ -28,4 +28,5 @@ import:
 #  - secure.yml
 #  - sleep.yml
   - vault.yml
+  - vault_secrets.yml
 # comment check
