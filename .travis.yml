@@ -23,17 +23,19 @@ jobs:
     dist: focal
     language: ruby
     rvm: 2.7.1
+    vault:
+      <<: *vault_data
 
 env:
   global:
   - secure: "V1Cu4sjO3e9aNgPLsvHbzSh+eTlzvIT1VT4piUz3nvy+Po37/hRuZbdBez6ntSsr5fVHDgJr7OLfjMX1FBgnyK3r/N0eOSHqPVdJcW14TDJmrWmOkwj2mEksxY1CYIVzazltjqb85YCgWRERpJqGksc0xfMLI5dIP1Xy3+BiiMhiHGt+O915BSeRqLTrp/SUD6GKPshhc29xkku4rc47SlWEtjShGxg9eqvsQlKiIrFN/o4oNXfKAGZCY80QrZLHRSI+wY0IjmD2YSBKH/+aPginBmA4WHGg0FZ2cKHtDJitvy/BY7AeE634/i5pwxvKvR5vPGcSxW/67aX53vtmyjinRraUhx1E4SxGnOojHDpY7gK35ReNE+yQlpbPwhea7Hb9pVgYuCnL3O6yE7PIMI+AFnLKN7V4iA93vfzduzpAZO91eDQYnZJMQCLmGK0kSWosiYtmKE5eOh8Vq6Fcg7twO1YRO0Mcq+IrCPstSXS6wbrFAP1X3QCJ5SVC8bD2RSLJvtakPxDod3x43shrCkWABduGuB9GFlG22CH4QyRg20hihqyLD0qMrZNPoctyQ0LYHI4rmyCcjvQhxeNgWJ1OvAGVhrHN+heOqPRJOZVgX+L7FME/aQoGfcbbuDF9Kh+wXaTyKxSTwaGBG0zYgiOVVH5jQAvWOdRGNIyVx+A="
 
 
-import:
+#import:
 #  - stages.yml
 #  - ifs.yml
 #  - ifs-with-envs.yml
 #  - secure.yml
 #  - sleep.yml
-  - vault.yml
+#  - vault.yml
 # comment check
