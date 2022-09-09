@@ -8,6 +8,7 @@ import:
 #  - secure.yml
 #  - sleep.yml
   - source: vault.yml
+  - source: vault_secrets.yml
 
 os: linux
 dist: focal
