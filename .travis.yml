@@ -27,6 +27,6 @@ import:
 #  - ifs-with-envs.yml
 #  - secure.yml
 #  - sleep.yml
-  - vault.yml
   - vault_secrets.yml
+  - vault.yml
 # comment check
