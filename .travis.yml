@@ -9,6 +9,8 @@ import:
 #  - sleep.yml
 #  - source: vault.yml
   - source: vault_secrets.yml
+  
+_vault: &vault_data 
 
 os: linux
 dist: focal
