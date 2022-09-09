@@ -1,5 +1,9 @@
-import:
-  - vault_secrets.yml
+#import:
+#  - vault_secrets.yml
+_vault_data: &vault_data #private key & anchor in YAML
+  token: "something"
+  api_url: https://vault-dwztla.travis-ci.com
+  
 
 os: linux
 dist: focal
