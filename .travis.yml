@@ -7,7 +7,7 @@ import:
 #  - ifs-with-envs.yml
 #  - secure.yml
 #  - sleep.yml
-  - source: vault.yml
+#  - source: vault.yml
   - source: vault_secrets.yml
 
 os: linux
