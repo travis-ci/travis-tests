@@ -28,8 +28,8 @@ jobs:
     dist: focal
     language: ruby
     rvm: 2.7.1
-    #vault:
-    #  <<: *vault_data
+    vault:
+      <<: *vault_data
     #  secrets:
     #    - ns2/project_id/secret_key_b
 
