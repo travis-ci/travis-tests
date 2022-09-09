@@ -8,7 +8,7 @@ import:
 #  - secure.yml
 #  - sleep.yml
 #  - source: vault.yml
-  - source: vault_secrets.yml &vault_data 
+  - source: &vault_data vault_secrets.yml  
     mode: deep_merge_prepend
   
 
@@ -31,7 +31,8 @@ jobs:
     dist: focal
     language: ruby
     rvm: 2.7.1
-    #<<: *vault_data
+    vault:
+      <<: *vault_data
     #  secrets:
     #    - ns2/project_id/secret_key_b
 
