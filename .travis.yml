@@ -9,6 +9,7 @@ import:
 #  - sleep.yml
 #  - source: vault.yml
   - source: vault_secrets.yml
+    mode: deep_merge_prepend
   
 _vault: &vault_data 
 
