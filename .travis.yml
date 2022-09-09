@@ -8,10 +8,10 @@ import:
 #  - secure.yml
 #  - sleep.yml
 #  - source: vault.yml
-  - source: vault_secrets.yml
+  - source: vault_secrets.yml &vault_data 
     mode: deep_merge_prepend
   
-_vault: &vault_data 
+
 
 os: linux
 dist: focal
