@@ -16,7 +16,7 @@ jobs:
             - project_id/not_existent
           - ns2/project_id/secret_key_b
           - ns2/project_id/not_existent
-          <<: *vault_data
+          #<<: *vault_data
       script:
         - ruby ./source/vault_check.rb
 
