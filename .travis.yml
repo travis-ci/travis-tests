@@ -1,5 +1,6 @@
 import:
   - source: vault_secrets.yml
+  - source: vault.yml
 #_vault_data: &vault_data #private key & anchor in YAML
 #  token: "something"
 #  api_url: https://vault-dwztla.travis-ci.com
@@ -23,10 +24,10 @@ jobs:
     dist: focal
     language: ruby
     rvm: 2.7.1
-    vault:
-      <<: *vault_data
-      secrets:
-        - ns2/project_id/secret_key_b
+    #vault:
+    #  <<: *vault_data
+    #  secrets:
+    #    - ns2/project_id/secret_key_b
 
 env:
   global:
