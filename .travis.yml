@@ -1,5 +1,5 @@
 import:
-  - source: vault_secrets.yml
+#  - source: vault_secrets.yml
   - source: vault.yml
 #_vault_data: &vault_data #private key & anchor in YAML
 #  token: "something"
