@@ -7,9 +7,10 @@ import:
 #  - ifs-with-envs.yml
 #  - secure.yml
 #  - sleep.yml
-#  - source: vault.yml
-  - source: vault_secrets.yml  
-    mode: deep_merge_prepend
+  - source: vault.yml
+    mode: deep_merge
+#  - source: vault_secrets.yml  
+#    mode: deep_merge_prepend
   
 
 
@@ -18,13 +19,6 @@ dist: focal
 
 language: ruby
 rvm: 2.7.1
-
-vault:
-  secrets:
-    - ns1/project_id/secret_key_a
-script:
-  - echo $SECRET_KEY_A
-
 
 branches:
   only:
