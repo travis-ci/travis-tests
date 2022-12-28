@@ -55,3 +55,50 @@ jobs:
     # commit messages: https://docs.travis-ci.com/user/customizing-the-build/#skipping-a-build 
     # example: do something if commit message has specific value 'docker'
     # if: (branch = master and type = push ) OR commit_message =~ /ship:docker/ OR env(SHIP_DOCKER) = true
+  - name: SBOM Ruby
+    os: linux
+    language: ruby
+    script:
+      - gem build ./sbom/ruby/hello_world.gemspec
+    addons:
+      sbom:
+        on:
+          branch: 'sbom'
+        run_phase: 'after_success'
+        output_format: 'cyclonedx-json'
+        input_dir: '/sbom/ruby'
+  - name: SBOM Python
+    os: linux
+    language: python
+    script:
+      - pip install -r requirements.txt
+    addons:
+      sbom:
+        on:
+          branch: 'sbom'
+        run_phase: 'after_success'
+        output_format: 'cyclonedx-json'
+        input_dir: '/sbom/python'
+  - name: SBOM Go
+    os: linux
+    language: go
+    script:
+      - go build
+    addons:
+      sbom:
+        on:
+          branch: 'sbom'
+        run_phase: 'after_success'
+        output_format: 'cyclonedx-json'
+        input_dir: '/sbom/go'
+  - name: SBOM Node
+    os: linux
+    language: node_js
+    addons:
+      sbom:
+        on:
+          branch: 'sbom'
+        run_phase: 'after_success'
+        output_format: 'cyclonedx-json'
+        input_dir: '/sbom/node'
+

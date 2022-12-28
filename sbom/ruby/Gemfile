@@ -1,0 +1,4 @@
+source "http://rubygems.org"
+
+gem "bundler", ">= 2.3.25"
+gem "activesupport", ">= 2.3.5"
