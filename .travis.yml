@@ -67,10 +67,26 @@ jobs:
         run_phase: 'after_success'
         output_format: 'cyclonedx-json'
         input_dir: '/sbom/ruby'
+      deploy:
+        - provider: releases
+          api_key:
+            secure: SBOM_GITHUB_RELEASES_API_KEY
+          file_glob: true
+          file: sbom/ruby/**/*
+          skip_cleanup: true
+        - provider: s3
+          access_key_id: 
+            secure: SBOM_AWS_S3_ACCESS_KEY_ID
+          secret_access_key:
+            secure: SBOM_AWS_S3_SECRET_ACCESS_KEY
+          bucket: "sbom"
+          skip_cleanup: true
+          local_dir: sbom/ruby
   - name: SBOM Python
     os: linux
     language: python
     script:
+      - cd sbom/python
       - pip install -r requirements.txt
     addons:
       sbom:
@@ -79,10 +95,26 @@ jobs:
         run_phase: 'after_success'
         output_format: 'cyclonedx-json'
         input_dir: '/sbom/python'
+      deploy:
+        - provider: releases
+          api_key:
+            secure: SBOM_GITHUB_RELEASES_API_KEY
+          file_glob: true
+          file: sbom/python/**/*
+          skip_cleanup: true
+        - provider: s3
+          access_key_id: 
+            secure: SBOM_AWS_S3_ACCESS_KEY_ID
+          secret_access_key:
+            secure: SBOM_AWS_S3_SECRET_ACCESS_KEY
+          bucket: "sbom"
+          skip_cleanup: true
+          local_dir: sbom/python
   - name: SBOM Go
     os: linux
     language: go
     script:
+      - cd sbom/go
       - go build
     addons:
       sbom:
@@ -91,6 +123,21 @@ jobs:
         run_phase: 'after_success'
         output_format: 'cyclonedx-json'
         input_dir: '/sbom/go'
+      deploy:
+        - provider: releases
+          api_key:
+            secure: SBOM_GITHUB_RELEASES_API_KEY
+          file_glob: true
+          file: sbom/go/**/*
+          skip_cleanup: true
+        - provider: s3
+          access_key_id: 
+            secure: SBOM_AWS_S3_ACCESS_KEY_ID
+          secret_access_key:
+            secure: SBOM_AWS_S3_SECRET_ACCESS_KEY
+          bucket: "sbom"
+          skip_cleanup: true
+          local_dir: sbom/go
   - name: SBOM Node
     os: linux
     language: node_js
@@ -101,4 +148,19 @@ jobs:
         run_phase: 'after_success'
         output_format: 'cyclonedx-json'
         input_dir: '/sbom/node'
+      deploy:
+        - provider: releases
+          api_key:
+            secure: SBOM_GITHUB_RELEASES_API_KEY
+          file_glob: true
+          file: sbom/node/**/*
+          skip_cleanup: true
+        - provider: s3
+          access_key_id: 
+            secure: SBOM_AWS_S3_ACCESS_KEY_ID
+          secret_access_key:
+            secure: SBOM_AWS_S3_SECRET_ACCESS_KEY
+          bucket: "sbom"
+          skip_cleanup: true
+          local_dir: sbom/node
 
