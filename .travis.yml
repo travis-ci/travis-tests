@@ -67,6 +67,7 @@ jobs:
         run_phase: 'after_success'
         output_format: 'cyclonedx-json'
         input_dir: '/sbom/ruby'
+        output_dir: '/sbom/ruby'
       deploy:
         - provider: releases
           edge: true
@@ -95,6 +96,7 @@ jobs:
         run_phase: 'after_success'
         output_format: 'cyclonedx-json'
         input_dir: '/sbom/python'
+        output_dir: '/sbom/python'
       deploy:
         - provider: releases
           edge: true
@@ -123,6 +125,7 @@ jobs:
         run_phase: 'after_success'
         output_format: 'cyclonedx-json'
         input_dir: '/sbom/go'
+        output_dir: '/sbom/go'
       deploy:
         - provider: releases
           edge: true
@@ -151,6 +154,7 @@ jobs:
         run_phase: 'after_success'
         output_format: 'cyclonedx-json'
         input_dir: '/sbom/node'
+        output_dir: '/sbom/node'
       deploy:
         - provider: releases
           edge: true
