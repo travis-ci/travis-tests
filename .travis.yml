@@ -69,12 +69,14 @@ jobs:
         input_dir: '/sbom/ruby'
       deploy:
         - provider: releases
+          edge: true
           file_glob: true
           file: sbom/ruby/**/*
           skip_cleanup: true
           on:
             branch: sbom
         - provider: s3
+          edge: true
           bucket: "sbom-test"
           skip_cleanup: true
           local_dir: sbom/ruby
@@ -95,12 +97,14 @@ jobs:
         input_dir: '/sbom/python'
       deploy:
         - provider: releases
+          edge: true
           file_glob: true
           file: sbom/python/**/*
           skip_cleanup: true
           on:
             branch: sbom
         - provider: s3
+          edge: true
           bucket: "sbom-test"
           skip_cleanup: true
           local_dir: sbom/python
@@ -121,12 +125,14 @@ jobs:
         input_dir: '/sbom/go'
       deploy:
         - provider: releases
+          edge: true
           file_glob: true
           file: sbom/go/**/*
           skip_cleanup: true
           on:
             branch: sbom
         - provider: s3
+          edge: true
           bucket: "sbom-test"
           skip_cleanup: true
           local_dir: sbom/go
@@ -147,12 +153,14 @@ jobs:
         input_dir: '/sbom/node'
       deploy:
         - provider: releases
+          edge: true
           file_glob: true
           file: sbom/node/**/*
           skip_cleanup: true
           on:
             branch: sbom
         - provider: s3
+          edge: true
           bucket: "sbom-test"
           skip_cleanup: true
           local_dir: sbom/node
