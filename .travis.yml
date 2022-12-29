@@ -153,6 +153,9 @@ jobs:
   - name: SBOM Node
     os: linux
     language: node_js
+    script:
+      - cd sbom/node
+      - npm install
     addons:
       sbom:
         on:
