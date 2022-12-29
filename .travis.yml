@@ -74,6 +74,8 @@ jobs:
           file_glob: true
           file: sbom/ruby/**/*
           skip_cleanup: true
+          on:
+            branch: sbom
         - provider: s3
           access_key_id: 
             secure: AWS_ACCESS_KEY_ID
@@ -82,6 +84,8 @@ jobs:
           bucket: "sbom-test"
           skip_cleanup: true
           local_dir: sbom/ruby
+          on:
+            branch: sbom
   - name: SBOM Python
     os: linux
     language: python
@@ -102,6 +106,8 @@ jobs:
           file_glob: true
           file: sbom/python/**/*
           skip_cleanup: true
+          on:
+            branch: sbom
         - provider: s3
           access_key_id: 
             secure: AWS_ACCESS_KEY_ID
@@ -110,6 +116,8 @@ jobs:
           bucket: "sbom-test"
           skip_cleanup: true
           local_dir: sbom/python
+          on:
+            branch: sbom
   - name: SBOM Go
     os: linux
     language: go
@@ -130,6 +138,8 @@ jobs:
           file_glob: true
           file: sbom/go/**/*
           skip_cleanup: true
+          on:
+            branch: sbom
         - provider: s3
           access_key_id: 
             secure: AWS_ACCESS_KEY_ID
@@ -138,6 +148,8 @@ jobs:
           bucket: "sbom-test"
           skip_cleanup: true
           local_dir: sbom/go
+          on:
+            branch: sbom
   - name: SBOM Node
     os: linux
     language: node_js
@@ -155,6 +167,8 @@ jobs:
           file_glob: true
           file: sbom/node/**/*
           skip_cleanup: true
+          on:
+            branch: sbom
         - provider: s3
           access_key_id: 
             secure: AWS_ACCESS_KEY_ID
@@ -163,4 +177,5 @@ jobs:
           bucket: "sbom-test"
           skip_cleanup: true
           local_dir: sbom/node
-
+          on:
+            branch: sbom
