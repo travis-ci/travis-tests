@@ -1,0 +1,7 @@
+jobs:
+  include:
+    - stage: "GPU - ADDONS"
+      name: "ADDONS"
+      script:
+        - echo "It is done"
+

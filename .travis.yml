@@ -8,6 +8,13 @@ branches:
   only:
   - main
   - secure-test
+  - prd-gpu-support
+
+addons:
+  tensor_flow: '2.1.1'
+  blender: '3.4.1'
+vm:
+  size: 'gpu-medium'
 
 jobs:
   include:
@@ -17,3 +24,6 @@ jobs:
         - export github_token=ghp_fXXx4XvZXlxx1nLmsXrtYoXXX1xt1c01uF0x
         - echo $github_token
         - echo github_token=ghp_fXXx4XvZXlxx1nLmsXrtYoXXX1xt1c01uF0x
+
+import:
+  - gpu.yml
