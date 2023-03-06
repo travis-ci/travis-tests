@@ -2,6 +2,16 @@ jobs:
   include:
     - stage: "GPU - ADDONS"
       name: "ADDONS"
+      vm:
+        size: 'gpu-medium'
+      os: 'linux'
+      script:
+        - echo "It is done"
+    - stage: "GPU - windows - should not allow that"
+      name: "ADDONS - windows"
+      vm:
+        size: 'gpu-medium'
+      os: 'windows'
       script:
         - echo "It is done"
 

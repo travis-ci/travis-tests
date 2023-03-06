@@ -13,8 +13,6 @@ branches:
 addons:
   tensor_flow: '2.1.1'
   blender: '3.4.1'
-vm:
-  size: 'gpu-medium'
 
 jobs:
   include:
