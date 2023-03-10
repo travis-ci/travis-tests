@@ -8,6 +8,7 @@ jobs:
       script:
         - echo "It is done"
     - stage: "GPU - windows - should not allow that"
+      language: bash
       name: "ADDONS - windows"
       vm:
         size: 'gpu-medium'
