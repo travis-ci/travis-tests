@@ -4,6 +4,7 @@ jobs:
       name: "ADDONS"
       vm:
         size: 'gpu-medium'
+      arch: 'amd64'
       os: 'linux'
       addons:
         tensorflow: 2.11
