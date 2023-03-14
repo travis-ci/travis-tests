@@ -5,14 +5,26 @@ jobs:
       vm:
         size: 'gpu-medium'
       os: 'linux'
+      addons:
+        tensorflow: 2.11
+        blender: 3.4.1
       script:
         - echo "It is done"
     - stage: "GPU - windows - should not allow that"
       language: bash
-      name: "ADDONS - windows"
+      name: "windows"
       vm:
         size: 'gpu-medium'
       os: 'windows'
+      script:
+        - echo "It is done"
+    - stage: "GPU - arm64 - should not allow that"
+      language: bash
+      name: "arm64"
+      vm:
+        size: 'gpu-medium'
+      os: 'linux'
+      arch: arm64
       script:
         - echo "It is done"
 
