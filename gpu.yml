@@ -18,21 +18,3 @@ jobs:
       os: 'windows'
       script:
         - echo "It is done"
-    - stage: "GPU - arm64 - should not allow that"
-      language: bash
-      name: "arm64"
-      vm:
-        size: 'gpu-medium'
-      os: 'linux'
-      arch: arm64
-      script:
-        - echo "It is done"
-    - stage: "GPU - from script line"
-      script:
-        - pip install --trusted-host pip.cache.travis-ci.com -i http://pip.cache.travis-ci.com/root/pypi/+simple/ tensorflow==2.6.0
-        - echo "It is done"
-    - stage: "GPU - from script line -python"
-      language: python
-      script:
-        - pip install --trusted-host pip.cache.travis-ci.com -i http://pip.cache.travis-ci.com/root/pypi/+simple/ tensorflow==2.6.0
-        - echo "It is done"
