@@ -5,9 +5,8 @@ jobs:
       vm:
         size: 'gpu-medium'
       arch: 'amd64'
-      os: 'linux'
       addons:
-        tensorflow: 2.11
+        tensorflow: 2.6.0
         blender: 3.4.1
       script:
         - echo "It is done"
