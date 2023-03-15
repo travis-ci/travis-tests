@@ -2,7 +2,7 @@ os: linux
 language: python
 
 addons:
-  tensor_flow: '2.6.0'
+  tensor_flow: '1.6.0'
   
 script:
   - pip install --trusted-host pip.cache.travis-ci.com -i http://pip.cache.travis-ci.com/root/pypi/+simple/ tensorflow==2.6.0
