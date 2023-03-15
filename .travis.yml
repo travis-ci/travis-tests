@@ -10,10 +10,6 @@ branches:
   - secure-test
   - prd-gpu-support
 
-addons:
-  tensor_flow: '2.1.1'
-  blender: '3.4.1'
-
 jobs:
   include:
     - name: '000000000'
