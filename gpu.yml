@@ -35,7 +35,6 @@ jobs:
       script:
         - echo "It is done"
     - stage: "GPU - windows - should not allow that - just gpu"
-      dist: xenial
       language: bash
       name: "windows"
       vm:
