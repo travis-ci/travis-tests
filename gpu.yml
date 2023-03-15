@@ -2,6 +2,7 @@ jobs:
   include:
     - stage: "GPU - ADDONS"
       name: "ADDONS"
+      dist: xenial
       vm:
         size: 'gpu-medium'
       arch: 'amd64'
@@ -11,8 +12,11 @@ jobs:
       script:
         - echo "It is done"
     - stage: "GPU - windows - should not allow that"
+      dist: xenial
       language: bash
       name: "windows"
+      addons:
+        blender: 3.4.1
       vm:
         size: 'gpu-medium'
       os: 'windows'
