@@ -23,6 +23,14 @@ jobs:
       script:
         - blender -v
         - echo "It is done"
+    - stage: "GPU - without addons"
+      name: "without addons"
+      dist: focal
+      vm:
+        size: 'gpu-medium'
+      arch: 'amd64'
+      script:
+        - echo "It is done"
     - stage: "GPU - windows - should not allow that - blender"
       dist: xenial
       language: bash
