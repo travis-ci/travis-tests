@@ -12,6 +12,17 @@ jobs:
       script:
         - blender -v
         - echo "It is done"
+    - stage: "GPU - Only blender"
+      name: "ADDONS"
+      dist: xenial
+      vm:
+        size: 'gpu-medium'
+      arch: 'amd64'
+      addons:
+        blender: 3.4.1
+      script:
+        - blender -v
+        - echo "It is done"
     - stage: "GPU - windows - should not allow that - blender"
       dist: xenial
       language: bash
