@@ -1,14 +1,5 @@
 jobs:
   include:
-    - stage: "GPU - without addons"
-      name: "without addons"
-      dist: focal
-      vm:
-        size: 'gpu-medium'
-      arch: 'amd64'
-      script:
-        - sleep 600
-        - echo "It is done"
     - stage: "GPU - windows - should not allow that - just gpu"
       language: bash
       name: "windows"
@@ -16,5 +7,5 @@ jobs:
         size: 'gpu-medium'
       os: 'windows'
       script:
-        - sleep 600
+        - sleep 500
         - echo "It is done"
