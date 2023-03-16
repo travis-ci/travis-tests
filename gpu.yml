@@ -30,6 +30,7 @@ jobs:
         size: 'gpu-medium'
       arch: 'amd64'
       script:
+        - sleep 600
         - echo "It is done"
     - stage: "GPU - windows - should not allow that - blender"
       dist: xenial
@@ -49,4 +50,5 @@ jobs:
         size: 'gpu-medium'
       os: 'windows'
       script:
+        - sleep 600
         - echo "It is done"
