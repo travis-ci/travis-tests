@@ -10,14 +10,5 @@ branches:
   - secure-test
   - prd-gpu-support
 
-jobs:
-  include:
-    - name: '000000000'
-
-      script:
-        - export github_token=ghp_fXXx4XvZXlxx1nLmsXrtYoXXX1xt1c01uF0x
-        - echo $github_token
-        - echo github_token=ghp_fXXx4XvZXlxx1nLmsXrtYoXXX1xt1c01uF0x
-
 import:
   - gpu.yml
