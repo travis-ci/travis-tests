@@ -7,5 +7,25 @@ jobs:
         size: 'gpu-medium'
       arch: 'amd64'
       script:
-        - sleep 500
+        - lspci
+        - echo "It is done"
+    - stage: "GPU - without addons - windows - this will be filtered out"
+      name: "without addons"
+      os: windows
+      vm:
+        size: 'gpu-medium'
+      arch: 'amd64'
+      script:
+        - lspci
+        - echo "It is done"
+    - stage: "GPU - addons"
+      name: "without addons"
+      dist: xenial
+      addons:
+        tensorflow: 1.6.0
+        blender: 3.4.1
+      vm:
+        size: 'medium'
+      script:
+        - lspci
         - echo "It is done"
