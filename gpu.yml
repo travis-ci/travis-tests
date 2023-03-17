@@ -28,4 +28,4 @@ jobs:
         size: 'medium'
       script:
         - lspci
-        - echo "It is done"
+        - echo "It is done!"
