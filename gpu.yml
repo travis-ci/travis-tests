@@ -1,5 +1,14 @@
 jobs:
   include:
+    - stage: "GPU - without addons"
+      name: "without addons"
+      dist: focal
+      vm:
+        size: 'gpu-medium'
+      arch: 'amd64'
+      script:
+        - lspci
+        - echo "It is done"
     - stage: "GPU - without addons - windows - this will be filtered out"
       name: "without addons"
       os: windows
@@ -7,9 +16,8 @@ jobs:
         size: 'gpu-medium'
       arch: 'amd64'
       script:
-        - lspci
-        - echo "It is done"
-    - stage: "GPU - with addons"
+        - echo "You should not see this"
+    - stage: "Xenial with addons"
       name: "with addons"
       dist: xenial
       addons:
@@ -17,4 +25,11 @@ jobs:
         blender: 3.4.1
       script:
         - lspci
+        - echo "It is done!"
+    - stage: "windows trying to install blender"
+      name: "it will fail"
+      os: windows
+      addons:
+        blender: 3.4.1
+      script:
         - echo "It is done!"
