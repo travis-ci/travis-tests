@@ -18,14 +18,12 @@ jobs:
       script:
         - lspci
         - echo "It is done"
-    - stage: "GPU - addons"
-      name: "without addons"
+    - stage: "GPU - with addons"
+      name: "with addons"
       dist: xenial
       addons:
         tensorflow: 1.6.0
         blender: 3.4.1
-      vm:
-        size: 'medium'
       script:
         - lspci
         - echo "It is done!"
