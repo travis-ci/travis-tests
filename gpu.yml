@@ -1,14 +1,5 @@
 jobs:
   include:
-    - stage: "GPU - without addons"
-      name: "without addons"
-      dist: focal
-      vm:
-        size: 'gpu-medium'
-      arch: 'amd64'
-      script:
-        - lspci
-        - echo "It is done"
     - stage: "GPU - without addons - windows - this will be filtered out"
       name: "without addons"
       os: windows
