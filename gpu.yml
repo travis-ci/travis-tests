@@ -17,12 +17,3 @@ jobs:
       arch: 'amd64'
       script:
         - echo "You should not see this"
-    - stage: "NON - GPU"
-      name: "it does not use gpu"
-      dist: focal
-      vm:
-        size: 'medium'
-      arch: 'amd64'
-      script:
-        - lspci
-        - echo "It is done"
