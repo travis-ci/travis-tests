@@ -17,19 +17,12 @@ jobs:
       arch: 'amd64'
       script:
         - echo "You should not see this"
-    - stage: "Xenial with addons"
-      name: "with addons"
-      dist: xenial
-      addons:
-        tensorflow: 1.6.0
-        blender: 3.4.1
+    - stage: "NON - GPU"
+      name: "it does not use gpu"
+      dist: focal
+      vm:
+        size: 'medium'
+      arch: 'amd64'
       script:
         - lspci
-        - echo "It is done!"
-    - stage: "windows trying to install blender"
-      name: "it will fail"
-      os: windows
-      addons:
-        blender: 3.4.1
-      script:
-        - echo "It is done!"
+        - echo "It is done"
