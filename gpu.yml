@@ -7,7 +7,6 @@ jobs:
         size: 'medium'
       arch: 'amd64'
       script:
-        - sleep 300
         - lspci
         - echo "It is done"
     - stage: "GPU - without addons"
@@ -17,7 +16,6 @@ jobs:
         size: 'gpu-medium'
       arch: 'amd64'
       script:
-        - sleep 300
         - lspci
         - echo "It is done"
     - stage: "GPU - without addons - windows - this will be filtered out"
@@ -28,3 +26,10 @@ jobs:
       arch: 'amd64'
       script:
         - echo "You should not see this"
+    - stage: "Installing addons on linux"
+      name: "addons xenial"
+      addons:
+        tensorflow: 1.6.0
+        blender: 3.4.1
+      script:
+        - echo "it is done"
