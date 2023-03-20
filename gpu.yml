@@ -7,6 +7,7 @@ jobs:
         size: 'medium'
       arch: 'amd64'
       script:
+        - sleep 300
         - lspci
         - echo "It is done"
     - stage: "GPU - without addons"
@@ -16,6 +17,7 @@ jobs:
         size: 'gpu-medium'
       arch: 'amd64'
       script:
+        - sleep 300
         - lspci
         - echo "It is done"
     - stage: "GPU - without addons - windows - this will be filtered out"
