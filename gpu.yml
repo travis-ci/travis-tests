@@ -48,3 +48,13 @@ jobs:
         - df -h
         - blender -v
         - echo "it is done"
+    - stage: "Installing addons on linux"
+      name: "addons focal - it fails for tensorflow because of cache/dns"
+      dist: xenial
+      addons:
+        tensorflow: 1.6.0
+        blender: 3.4.1
+      script:
+        - df -h
+        - blender -v
+        - echo "it is done"
