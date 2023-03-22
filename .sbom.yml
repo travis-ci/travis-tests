@@ -1,4 +1,6 @@
-    # SBOM generation examples below
+# SBOM generation examples below
+jobs:
+  include:
   - name: SBOM Ruby
     os: linux
     language: ruby
