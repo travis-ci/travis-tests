@@ -43,6 +43,7 @@ jobs:
     script:
       - ruby ./source/ruby_hello.rb
       - echo Test flag is ${TEST_FLAG} 
+    if: branch = main
     # add to conditionals testing running build from specific branch (+add branch), allow failure (https://docs.travis-ci.com/user/conditional-builds-stages-jobs/) 
     # building branches - https://docs.travis-ci.com/user/customizing-the-build/#building-specific-branches
     # please add cases for build-stages https://docs.travis-ci.com/user/build-stages/
