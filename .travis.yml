@@ -4,6 +4,7 @@ language: ruby
 env: 
   - TEST_FLAG=TRUE
   - TEST_FLAG=FALSE
+if: branch = main
 # separate test scenarios to separate yml files please and use build config import: https://docs.travis-ci.com/user/build-config-imports + https://blog.travis-ci.com/2019-11-11-build-config-imports
 import:
 - .java.yml
@@ -32,21 +33,19 @@ jobs:
     dist: bionic
     language: ruby
     #rvm: 2.6.6
-    if: (env(TEST_FLAG) = TRUE)
+    if: (env(TEST_FLAG) = TRUE) AND branch = main
     script:
       - ruby ./source/ruby_hello.rb
       - echo Test flag is ${TEST_FLAG} 
-    if: branch = main
   - name: Bionic Ruby 2.6.6 FALSE
     os: linux
     dist: bionic
     language: ruby
     #rvm: 2.6.6
-    if: (env(TEST_FLAG) = FALSE)
+    if: (env(TEST_FLAG) = FALSE) AND branch = main
     script:
       - ruby ./source/ruby_hello.rb
       - echo Test flag is ${TEST_FLAG} 
-    if: branch = main
     # add to conditionals testing running build from specific branch (+add branch), allow failure (https://docs.travis-ci.com/user/conditional-builds-stages-jobs/) 
     # building branches - https://docs.travis-ci.com/user/customizing-the-build/#building-specific-branches
     # please add cases for build-stages https://docs.travis-ci.com/user/build-stages/
