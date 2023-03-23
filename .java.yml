@@ -9,4 +9,14 @@ jobs:
     script:
     - java -version
     - ls -la /usr/lib/jvm
+  - name: "OpenJ9 jdk support - IBM Power Bionic"
+    if: branch = java-tests
+    os: linux
+    language: java
+    dist: bionic
+    arch: ppc64le
+    jdk: eclipse-11
+    script:
+    - java -version
+    - ls -la /usr/lib/jvm
     
