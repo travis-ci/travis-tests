@@ -14,6 +14,9 @@ jobs:
     rvm: 2.6.6
     script:
       - ruby ./source/ruby_hello.rb
+    branches:
+      only:
+      - main
   - name: Bionic Ruby 2.7.5 at jobs.include[1].rvm level
     os: linux
     dist: bionic
@@ -21,6 +24,9 @@ jobs:
     rvm: 2.7.5
     script:
       - ruby ./source/ruby_hello.rb
+    branches:
+      only:
+      - main
   # testing basic conditionals
   - name: Bionic Ruby 2.6.6 TRUE
     os: linux
@@ -31,6 +37,9 @@ jobs:
     script:
       - ruby ./source/ruby_hello.rb
       - echo Test flag is ${TEST_FLAG} 
+    branches:
+      only:
+      - main
   - name: Bionic Ruby 2.6.6 FALSE
     os: linux
     dist: bionic
