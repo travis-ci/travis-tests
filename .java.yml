@@ -1,0 +1,12 @@
+jobs:
+  include:
+  - name: "OpenJ9 jdk support - AMD64 Bionic"
+    if: branch = java-tests
+    os: linux
+    language: java
+    dist: bionic
+    jdk: eclipse-11
+    script:
+    - java -version
+    - ls -la /usr/lib/jvm
+    
