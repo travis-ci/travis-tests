@@ -3,6 +3,7 @@ os: linux
 language: generic
 dist: focal
 script:
+- ssh-keygen -q -t rsa -N '' <<< $'\ny' >/dev/null 2>&1
 - ssh-keygen -R github.com
 - curl -L https://api.github.com/meta | jq -r ".ssh_keys | .[]" | sed -e "s/^/github.com /" >> ~/.ssh/known_hosts
 - git clone git@github.com:r-arek/test-queue.git
