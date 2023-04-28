@@ -1,57 +1,18 @@
-language: ruby
-# rvm: 
-#  - 2.6.6
-env: 
-  - TEST_FLAG=TRUE
-  - TEST_FLAG=FALSE
-# separate test scenarios to separate yml files please and use build config import: https://docs.travis-ci.com/user/build-config-imports + https://blog.travis-ci.com/2019-11-11-build-config-imports
+os: linux
+dist: bionic
+
+install: skip
+
 jobs:
   include:
-  - name: Bionic Ruby 2.6.6 at jobs.include[1].rvm level
-    os: linux
-    dist: bionic
-    language: ruby
-    rvm: 2.6.6
-    script:
-      - ruby ./source/ruby_hello.rb
-  - name: Bionic Ruby 2.7.5 at jobs.include[1].rvm level
-    os: linux
-    dist: bionic
-    language: ruby
-    rvm: 2.7.5
-    script:
-      - ruby ./source/ruby_hello.rb
-  # testing basic conditionals
-  - name: Bionic Ruby 2.6.6 TRUE
-    os: linux
-    dist: bionic
-    language: ruby
-    #rvm: 2.6.6
-    if: (env(TEST_FLAG) = TRUE)
-    script:
-      - ruby ./source/ruby_hello.rb
-      - echo Test flag is ${TEST_FLAG} 
-  - name: Bionic Ruby 2.6.6 FALSE
-    os: linux
-    dist: bionic
-    language: ruby
-    #rvm: 2.6.6
-    if: (env(TEST_FLAG) = FALSE)
-    script:
-      - ruby ./source/ruby_hello.rb
-      - echo Test flag is ${TEST_FLAG} 
-    # add to conditionals testing running build from specific branch (+add branch), allow failure (https://docs.travis-ci.com/user/conditional-builds-stages-jobs/) 
-    # building branches - https://docs.travis-ci.com/user/customizing-the-build/#building-specific-branches
-    # please add cases for build-stages https://docs.travis-ci.com/user/build-stages/
-    # - sequence of stages
-    # - named stages
-    # ==
-    # using encrypted variables: https://docs.travis-ci.com/user/encryption-keys/ 
-    # ==
-    # create a job that does not puts out enything to cli for first 10 minutes - we expect autocancel on that
-    # ==
-    # create a job that runs for more than 50 minutes (an output to cli must be done with intervals < 10 mins) - we expect autocancel at around 50 minutes mark here
-    # ==
-    # commit messages: https://docs.travis-ci.com/user/customizing-the-build/#skipping-a-build 
-    # example: do something if commit message has specific value 'docker'
-    # if: (branch = master and type = push ) OR commit_message =~ /ship:docker/ OR env(SHIP_DOCKER) = true
+    - name: "start with ruby 2.6.x and shift to 2.4.8"
+      arch: amd64
+      language: ruby
+      ruby: 2.6.9
+      before_install:
+        - rvm install 2.4.8
+        - rvm use 2.4.8
+        - gem install bundler -v '<2'
+      script:
+        - ruby -v
+        - bundler -v
