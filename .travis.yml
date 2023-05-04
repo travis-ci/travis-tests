@@ -16,6 +16,6 @@ jobs:
         tensorflow: 2.6.2
         blender: 3.4.1
       script:
-        - find / | grep tensorflow
         - which python
-        - /opt/python/3.7.13 hello_world.py
+        - ls /opt/python/3.7.13
+        - /opt/python/3.7.13/lib/python3.7 hello_world.py
