@@ -5,11 +5,13 @@ jobs:
   include:
     - stage: "Instal addons on linux"
       name: "addons on focal distribution gpu xlarge"
-      dist: xenial
+      dist: focal
       vm:
         size: 'gpu-xlarge'
       language: python
       arch: 'amd64'
+      python:
+        - "3.7"
       addons:
         tensorflow: 2.6.2
         blender: 3.4.1
