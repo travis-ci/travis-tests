@@ -9,8 +9,6 @@ jobs:
       vm:
         size: 'gpu-xlarge'
       language: python
-      python:
-        - "3.9"
       arch: 'amd64'
       addons:
         tensorflow: 2.6.2
