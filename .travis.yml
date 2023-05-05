@@ -11,9 +11,11 @@ jobs:
       language: python
       arch: 'amd64'
       python:
-        - "3.7"
+        - "3.9"
       addons:
         tensorflow: 2.6.2
         blender: 3.4.1
+      before_script:
+        - pip install --trusted-host pip.cache.travis-ci.com -i http://pip.cache.travis-ci.com/root/pypi/+simple/ tensorflow==2.6.2
       script:
         - python hello_world.py
