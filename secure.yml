@@ -1,0 +1,8 @@
+# using encrypted variables: https://docs.travis-ci.com/user/encryption-keys/ 
+# one must first create encrypted variables using travis-cli
+# to run this job properly, one may need to fork the repository or be a collaborator
+jobs:
+  include:
+    - stage: "Secure stage I"
+      name: "Secure stage I"
+      script: echo $MANA_MANA

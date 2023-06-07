@@ -1,0 +1,21 @@
+# testing conditionals - travis-yml and later scheduler involved
+# ==
+# testing conditional actions dependent on environmental variable definition for the build job
+# testing on specific branch + job stages thrown in
+env:
+  - MY_ENV=myenv
+  - ANOTHER_ENV=another_env
+jobs:
+  include:
+    - stage: "IFS with envs - first"
+      name: "IFS with envs - first stage"
+      if: branch = integration-regresion-tests
+      script: ruby ./source/ruby_hello.rb
+    - stage: "IFS with envs - two"
+      name: "IFS with envs - second stage"
+      env: MY_ENV=myenv
+      script: ruby ./source/ruby_hello.rb
+    - stage: "IFS with envs - third - never run"
+      name: "IFS with envs - third - never run stage"
+      env: MISSING_ENV=missing_env
+      script: ruby ./source/ruby_hello.rb
